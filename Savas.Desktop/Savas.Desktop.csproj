@@ -79,5 +79,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Savas.Library\Savas.Library.csproj">
+      <Project>{bd3fc58e-c851-4b49-9046-2a428f7a33cd}</Project>
+      <Name>Savas.Library</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
