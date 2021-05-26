@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31129.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Savas.Desktop", "Savas.Desktop\Savas.Desktop.csproj", "{68D2FBD9-0D50-4F50-BF8C-45814F8EC843}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Savas.Library", "Savas.Library\Savas.Library.csproj", "{BD3FC58E-C851-4B49-9046-2A428F7A33CD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{68D2FBD9-0D50-4F50-BF8C-45814F8EC843}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68D2FBD9-0D50-4F50-BF8C-45814F8EC843}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68D2FBD9-0D50-4F50-BF8C-45814F8EC843}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68D2FBD9-0D50-4F50-BF8C-45814F8EC843}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD3FC58E-C851-4B49-9046-2A428F7A33CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD3FC58E-C851-4B49-9046-2A428F7A33CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD3FC58E-C851-4B49-9046-2A428F7A33CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD3FC58E-C851-4B49-9046-2A428F7A33CD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C12B0EAE-8441-412D-AC22-10AEFED698C6}
+	EndGlobalSection
+EndGlobal
