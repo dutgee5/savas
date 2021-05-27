@@ -16,6 +16,7 @@ namespace Savas.Library.Concrete
         #region Alanlar
 
         private readonly Timer _gecenSureTimer = new Timer { Interval = 1000 };
+        private readonly Timer _hareketTimer = new Timer { Interval = 100 };
         private TimeSpan _gecenSure;
         private readonly Panel _ucaksavarPanel;
         private readonly Panel _savasAlaniPanel;
@@ -52,13 +53,35 @@ namespace Savas.Library.Concrete
         public Oyun(Panel ucaksavarPanel, Panel savasAlaniPanel)
         {
             _ucaksavarPanel = ucaksavarPanel;
-            _gecenSureTimer.Tick += GecenSureTimer_Tick;
             _savasAlaniPanel = savasAlaniPanel;
+
+            _gecenSureTimer.Tick += GecenSureTimer_Tick;
+            _hareketTimer.Tick += HareketTimer_Tick;
         }
 
         private void GecenSureTimer_Tick(object sender, EventArgs e)
         {
             GecenSure += TimeSpan.FromSeconds(1);
+        }
+
+        private void HareketTimer_Tick(object sender, EventArgs e)
+        {
+            MermileriHareketEttir();
+        }
+
+        private void MermileriHareketEttir()
+        {
+            for (int i = _mermiler.Count-1; i >=0; i--)
+            {
+                var mermi = _mermiler[i];
+                var ulastiMi = mermi.HareketEttir(Yon.Yukari);
+                if (ulastiMi)
+                {
+                    _mermiler.Remove(mermi);
+                    _savasAlaniPanel.Controls.Remove(mermi);
+                }
+            }
+            
         }
 
         public void AtesEt()
@@ -77,10 +100,17 @@ namespace Savas.Library.Concrete
             if (!DevamEdiyorMu) return;
 
             DevamEdiyorMu = true;
-            _gecenSureTimer.Start();
+
+            ZamanlayicilariBaslat();
 
             UcaksavarOlustur();
 
+        }
+
+        private void ZamanlayicilariBaslat()
+        {
+            _gecenSureTimer.Start();
+            _hareketTimer.Start();
         }
 
         private void UcaksavarOlustur()
@@ -95,9 +125,15 @@ namespace Savas.Library.Concrete
             if (!DevamEdiyorMu) return;
 
             DevamEdiyorMu = false;
-            _gecenSureTimer.Stop();
+
+            ZamanlayicilariDurdur();
         }
 
+        private void ZamanlayicilariDurdur()
+        {
+            _gecenSureTimer.Stop();
+            _hareketTimer.Stop();
+        }
 
         public void UcaksavariHareketEttir(Yon yon)
         {
