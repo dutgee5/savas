@@ -19,6 +19,8 @@ namespace Savas.Desktop
         public AnaForm()
         {
             InitializeComponent();
+
+            _oyun.GecenSureDegisti += Oyun_GecenSureDegisti;
         }
 
         private void AnaForm_KeyDown(object sender, KeyEventArgs e)
@@ -38,6 +40,11 @@ namespace Savas.Desktop
                     _oyun.AtesEt();
                     break;
             }
+        }
+
+        private void Oyun_GecenSureDegisti(object sender, EventArgs e)
+        {
+            sureLabel.Text = $"{_oyun.GecenSure.Minutes}:{_oyun.GecenSure.Seconds.ToString("D2")}";
         }
     }
 }
