@@ -14,8 +14,20 @@ namespace Savas.Library.Concrete
 
         public Ucak(Size hareketAlaniBoyutlari) : base(hareketAlaniBoyutlari)
         {
-         
+            HareketMesafesi = (int)(Height * 0.1);
             Left = rnd.Next(HareketAlaniBoyutlari.Width - Width + 1);
+        }
+
+        public Mermi VurulduMu(List<Mermi> mermiler)
+        {
+            foreach (var mermi in mermiler)
+            {
+                var vuruldumu = mermi.Top < Bottom && mermi.Right > Left && mermi.Left < Right;
+                if (vuruldumu) return mermi;
+
+            }
+
+            return null;
         }
     }
 }

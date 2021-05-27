@@ -70,6 +70,37 @@ namespace Savas.Library.Concrete
         private void HareketTimer_Tick(object sender, EventArgs e)
         {
             MermileriHareketEttir();
+            UcaklariHareketEttir();
+            VurulanUcaklariSil();
+        }
+
+        private void VurulanUcaklariSil()
+        {
+            for (var i = _ucaklar.Count - 1; i >= 0; i--)
+            {
+                var ucak = _ucaklar[i];
+
+                var vuranMermi = ucak.VurulduMu(_mermiler);
+                if (vuranMermi is null) continue;
+
+                _ucaklar.Remove(ucak);
+                _mermiler.Remove(vuranMermi);
+                _savasAlaniPanel.Controls.Remove(ucak);
+                _savasAlaniPanel.Controls.Remove(vuranMermi);
+            }
+        }
+
+        private void UcaklariHareketEttir()
+        {
+            foreach (var ucak in _ucaklar)
+            {
+                var ulastiMi = ucak.HareketEttir(Yon.Asagi);
+                if (!ulastiMi) continue;
+
+                Bitir();
+                break;
+
+            }
         }
 
         private void UcakOLusturmaTimer_Tick(object sender, EventArgs e)
