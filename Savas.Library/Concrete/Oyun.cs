@@ -1,4 +1,5 @@
 ﻿using Savas.Library.Enum;
+using System.Drawing;
 using Savas.Library.Interface;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,7 @@ namespace Savas.Library.Concrete
 
         private readonly Timer _gecenSureTimer = new Timer { Interval = 1000 };
         private TimeSpan _gecenSure;
+        private readonly Panel _ucaksavarPanel;
 
         #endregion
 
@@ -44,8 +46,9 @@ namespace Savas.Library.Concrete
 
         #region Metotlar
 
-        public Oyun()
+        public Oyun(Panel ucaksavarPanel)
         {
+            _ucaksavarPanel = ucaksavarPanel;
             _gecenSureTimer.Tick += GecenSureTimer_Tick;
         }
 
@@ -65,6 +68,18 @@ namespace Savas.Library.Concrete
 
             DevamEdiyorMu = true;
             _gecenSureTimer.Start();
+
+            UcaksavarOlustur();
+
+        }
+
+        private void UcaksavarOlustur()
+        {
+            var ucaksavar = new Ucaksavar(_ucaksavarPanel.Width)
+            { 
+                Image = Image.FromFile(@"Gorsellet\ucak.png") 
+            };
+            _ucaksavarPanel.Controls.Add(ucaksavar);
         }
 
         private void Bitir()

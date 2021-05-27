@@ -30,10 +30,10 @@ namespace Savas.Desktop
         private void InitializeComponent()
         {
             this.bilgiPanel = new System.Windows.Forms.Panel();
+            this.sureLabel = new System.Windows.Forms.Label();
+            this.bilgiLabel = new System.Windows.Forms.Label();
             this.ucaksavarPanel = new System.Windows.Forms.Panel();
             this.savasAlaniPanel = new System.Windows.Forms.Panel();
-            this.bilgiLabel = new System.Windows.Forms.Label();
-            this.sureLabel = new System.Windows.Forms.Label();
             this.bilgiPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,6 +49,28 @@ namespace Savas.Desktop
             this.bilgiPanel.Name = "bilgiPanel";
             this.bilgiPanel.Size = new System.Drawing.Size(1068, 97);
             this.bilgiPanel.TabIndex = 0;
+            // 
+            // sureLabel
+            // 
+            this.sureLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.sureLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.sureLabel.Location = new System.Drawing.Point(726, 9);
+            this.sureLabel.Name = "sureLabel";
+            this.sureLabel.Size = new System.Drawing.Size(330, 82);
+            this.sureLabel.TabIndex = 1;
+            this.sureLabel.Text = "0:00";
+            this.sureLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // bilgiLabel
+            // 
+            this.bilgiLabel.AutoSize = true;
+            this.bilgiLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.bilgiLabel.Location = new System.Drawing.Point(12, 4);
+            this.bilgiLabel.Name = "bilgiLabel";
+            this.bilgiLabel.Size = new System.Drawing.Size(717, 87);
+            this.bilgiLabel.TabIndex = 0;
+            this.bilgiLabel.Text = "Oyunu başlatmak için ENTER tuşuna basınız.\r\nUçaksavarı hareket ettirmek için SAĞ/" +
+    "SOL yön tuşlarına basın.\r\nAteş etmek için BOŞLUK tuşuna basın.\r\n";
             // 
             // ucaksavarPanel
             // 
@@ -67,28 +89,6 @@ namespace Savas.Desktop
             this.savasAlaniPanel.Name = "savasAlaniPanel";
             this.savasAlaniPanel.Size = new System.Drawing.Size(1068, 313);
             this.savasAlaniPanel.TabIndex = 2;
-            // 
-            // bilgiLabel
-            // 
-            this.bilgiLabel.AutoSize = true;
-            this.bilgiLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.bilgiLabel.Location = new System.Drawing.Point(12, 4);
-            this.bilgiLabel.Name = "bilgiLabel";
-            this.bilgiLabel.Size = new System.Drawing.Size(717, 87);
-            this.bilgiLabel.TabIndex = 0;
-            this.bilgiLabel.Text = "Oyunu başlatmak için ENTER tuşuna basınız.\r\nUçaksavarı hareket ettirmek için SAĞ/" +
-    "SOL yön tuşlarına basın.\r\nAteş etmek için BOŞLUK tuşuna basın.\r\n";
-            // 
-            // sureLabel
-            // 
-            this.sureLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.sureLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.sureLabel.Location = new System.Drawing.Point(726, 9);
-            this.sureLabel.Name = "sureLabel";
-            this.sureLabel.Size = new System.Drawing.Size(330, 82);
-            this.sureLabel.TabIndex = 1;
-            this.sureLabel.Text = "0:00";
-            this.sureLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // AnaForm
             // 
